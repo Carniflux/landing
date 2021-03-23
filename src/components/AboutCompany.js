@@ -1,9 +1,11 @@
-import {makeStyles, Typography} from "@material-ui/core";
+import {Container, makeStyles, Typography} from "@material-ui/core";
 import pic1 from "../img/pic1.png";
 import model from "../img/model.png";
 import pic2 from "../img/pic2.png";
 
 const companyStyle = makeStyles((theme) => ({
+    containerCompany: {
+    },
     model: {
         height: "30%",
         width: "30%",
@@ -22,7 +24,7 @@ const companyStyle = makeStyles((theme) => ({
         textIndent: 40
     },
     centerTypo: {
-        paddingTop: theme.spacing(10),
+        paddingTop: theme.spacing(8),
         float:"left",
         maxWidth: "55%",
         maxHeight: "40%",
@@ -30,18 +32,19 @@ const companyStyle = makeStyles((theme) => ({
     },
     secondTypo: {
         float: "left",
-        maxWidth: "35%",
-        maxHeight: "35%",
-        paddingTop: theme.spacing(14),
+        maxWidth: "40%",
+        maxHeight: "40%",
+        paddingTop: theme.spacing(8),
         paddingLeft: theme.spacing(8),
         flexGrow: 1
     },
     thirtyTypo: {
         float: "left",
-        maxWidth: "35%",
-        maxHeight: "35%",
-        paddingTop: theme.spacing(8),
-        paddingLeft: theme.spacing(8)
+        maxWidth: "40%",
+        maxHeight: "40%",
+        paddingTop: theme.spacing(4),
+        paddingLeft: theme.spacing(8),
+
     },
     picture1: {
         float: "right",
@@ -59,7 +62,7 @@ const companyStyle = makeStyles((theme) => ({
 export function AboutCompany() {
     const classes = companyStyle()
     return (
-        <div>
+        <Container maxWidth={"xl" } className={classes.containerCompany}>
             <Typography id={"about-company"} align={"left"} className={classes.headAboutCompany}> О компании </Typography>
             <Typography variant={"h4"} gutterBottom={true} className={classes.aboutCompany}>
                 RMC предлагает новый тип устройств - бытовые обогреватели, которые греют не за счет
@@ -72,7 +75,7 @@ export function AboutCompany() {
             <Typography align={"left"} variant={"h3"} className={classes.centerTypo} gutterBottom={true}>
                 Таким образом,
                 пользуясь обогревателем можно компенсировать расходы на электричество,
-                а при определённых <br/> условия - получить доход.
+                а при определённых  условия - получить доход.
             </Typography>
 
             <Typography align={"left"} variant={"h4"} className={classes.secondTypo} gutterBottom={true}>
@@ -84,6 +87,6 @@ export function AboutCompany() {
                 CNX - это эквивалент,<br/>универсальная стоимость<br/> тепловой энергии,
                 не зависящая<br/> от стоимости киловатт/час.
             </Typography>
-        </div>
+        </Container>
     )
 }

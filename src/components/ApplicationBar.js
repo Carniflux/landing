@@ -25,6 +25,8 @@ const barStyles = makeStyles((theme) => ({
     companyButton: {
         color: "red",
         flexGrow: 0.1,
+        fontSize: "large",
+        fontWeight: "bold"
     },
     company: {
         fontSize: "medium",
@@ -43,11 +45,6 @@ export function ApplicationBar() {
                     RMC
                 </Typography>
                 <Button className={classes.companyButton} href="#about-company">О компании</Button>
-                    <Typography align={"right"} color={"textPrimary"} className={classes.company}>
-                        RMC Russian Mining Company
-                        <br/>
-                        10100, Москва, Колпачный переулок дом 6 строение 2
-                    </Typography>
             </Toolbar>
         </Container>
     </AppBar>

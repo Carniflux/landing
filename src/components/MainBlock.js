@@ -1,54 +1,57 @@
-import {Button, makeStyles, Typography} from "@material-ui/core";
+import {Button, Container, makeStyles, Typography} from "@material-ui/core";
 import land from "../img/land.png";
 
 const mainStyles = makeStyles((theme) => ({
     mainImg: {
-        maxWidth: "71.57%",
-        maxHeight: "71.57%",
+        maxWidth: "100%",
+        maxHeight: "100%",
+        minWidth: "30%",
+        minHeight: "30%",
+        float:"left"
     },
     tagline: {
         color: "white",
+        float: "right",
         marginRight: theme.spacing(2),
         marginTop: theme.spacing(18),
+        fontSize: 50
     },
     mainLayout: {
         backgroundColor: "#f44643",
         backgroundSize: "cover",
-        float: "right",
-        width: "100vw",
-        minWidth: "191px",
-        maxWidth: "537px",
-        height: "100vh",
-        maxHeight: "1000px"
+        maxWidth: "100%",
+        height: "900px",
+        maxHeight: "100%",
+
     },
     buyButton: {
         backgroundColor: "white",
         float: "bottom",
         fontSize: "x-large",
-        marginLeft: theme.spacing(29),
+        marginLeft: theme.spacing(26.5),
         marginTop: theme.spacing(13)
     },
     cashBack: {
-        fontSize: "xx-large",
+        float: "left",
+        fontSize: 40,
         color: "white",
-        paddingTop: theme.spacing(10)
+        marginTop: theme.spacing(10),
+        marginLeft: theme.spacing(11)
     },
 }))
 
 export function MainBlock() {
     const classes = mainStyles()
     return (
-        <div>
-            <img src={land} alt={"not found"} className={classes.mainImg}/>
-            <div className={classes.mainLayout} >
-                <Typography variant={"h2"} align={"center"} className={classes.tagline}>
+            <Container maxWidth={"xl"} className={classes.mainLayout} >
+                <img src={land} alt={"not found"} className={classes.mainImg}/>
+                <Typography align={"center"} className={classes.tagline}>
                     Обогреватель,
                     <br/>
                     который платит
                 </Typography>
                 <Typography align={"center"} className={classes.cashBack}>кэшбэк за тепло</Typography>
-                <Button className={classes.buyButton}>Купить</Button>
-            </div>
-        </div>
+                <Button size={"large"} className={classes.buyButton}>Купить</Button>
+            </Container>
     )
 }
